@@ -14,6 +14,9 @@
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/report.css" rel="stylesheet" type="text/css" />
+    
+    
 </head>
 
 <body>
@@ -73,7 +76,18 @@
                             <div class="p-lg-2">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title mb-3">Available Reports</h4>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h4 class="header-title">Available Reports</h4>
+                                            <div class="search-container">
+                                                <div class="search-input-group">
+                                                    <i class="mdi mdi-magnify search-icon"></i>
+                                                    <input type="text" 
+                                                           class="form-control search-input" 
+                                                           id="reportSearch" 
+                                                           placeholder="Search reports...">
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="table-responsive">
                                             <table class="table table-sm table-centered table-hover mb-0">
@@ -89,8 +103,9 @@
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <!-- Example Row 1 -->
+                                                <tbody id="reportTableBody">
+                                                    <!-- Accounts -->
+                                                    <!-- Voucher Points -->
                                                     <tr>
                                                         <td>1</td>
                                                         <td>Accounts</td>
@@ -107,16 +122,105 @@
                                                             </a>
                                                         </td>
                                                     </tr>
-
-                                                    <!-- Balance Sheet 2 -->
+                                                    <!-- Receipt & Payment -->
                                                     <tr>
                                                         <td>2</td>
+                                                        <td>Accounts</td>
+                                                        <td>Receipt & Payment</td>
+                                                        <td>/receipt-Payement</td>
+                                                        <td>Receipt & Payment</td>
+                                                        <td>Md. Abdur Rashed</td>
+                                                        <td>21-Dec-2025</td>
+                                                        <td>
+                                                            <a href="Reports/Accounts/Receipt-Payement.pdf" 
+                                                               target="_blank" 
+                                                               class="btn btn-xm">
+                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Bank Payment -->
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Accounts</td>
+                                                        <td>AccountsLedger/Accounts Voucher Details</td>
+                                                        <td>/accounts-voucher-details</td>
+                                                        <td>Bank Payment</td>
+                                                        <td>Md. Abdur Rashed</td>
+                                                        <td>21-Dec-2025</td>
+                                                        <td>
+                                                            <a href="Reports/Accounts/BankPayment.pdf" 
+                                                               target="_blank" 
+                                                               class="btn btn-xm">
+                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- Trial Balance -->
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Accounts</td>
+                                                        <td>Trial Balance</td>
+                                                        <td>/trial-balance</td>
+                                                        <td>TRIAL BALANCE</td>
+                                                        <td>Md. Abdur Rashed</td>
+                                                        <td>15-Dec-2025</td>
+                                                        <td>
+                                                            <a href="Reports/Accounts/trial-balance.pdf" 
+                                                               target="_blank" 
+                                                               class="btn btn-xm">
+                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- Cheque Register -->
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Accounts</td>
+                                                        <td>Cheque Register</td>
+                                                        <td>/cheque-register</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
+                                                        <td>
+                                                            <a href="#" 
+                                                               target="_blank" 
+                                                               class="btn btn-xm">
+                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- Cash Bank Position -->
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Accounts</td>
+                                                        <td>Cash Bank Position</td>
+                                                        <td>/bank-position</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
+                                                        <td>
+                                                            <a href="#" 
+                                                               target="_blank" 
+                                                               class="btn btn-xm">
+                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i> 
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- MIS -->
+                                                    <!-- Balance Sheet -->
+                                                    <tr>
+                                                        <td>7</td>
                                                         <td>MIS</td>
                                                         <td>Financial Statement</td>
                                                         <td>/balance-sheet</td>
                                                         <td>Balance Sheet</td>
                                                         <td>Md. Abdur Rashed</td>
-                                                        <td>9-Oct-2025</td>
+                                                        <td>23-Dec-2025</td>
                                                         <td>
                                                             <a href="Reports\MIS\BalanceSheet.pdf" 
                                                                target="_blank" 
@@ -126,15 +230,15 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- Cash Flow (Direct) 3 -->
+                                                    <!-- Cash Flow (Direct)  -->
                                                     <tr>
-                                                        <td>3</td>
+                                                        <td>8</td>
                                                         <td>MIS</td>
                                                         <td>Financial Statement</td>
                                                         <td>/balance-sheet</td>
                                                         <td>Cash Flow (Direct)</td>
                                                         <td>Md. Abdur Rashed</td>
-                                                        <td>9-Oct-2025</td>
+                                                        <td>23-Dec-2025</td>
                                                         <td>
                                                             <a href="Reports\MIS\CashFlow.pdf" 
                                                                target="_blank" 
@@ -144,15 +248,15 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- Cash Flow (Indirect) 4 -->
+                                                    <!-- Cash Flow (Indirect)  -->
                                                     <tr>
-                                                        <td>4</td>
+                                                        <td>9</td>
                                                         <td>MIS</td>
                                                         <td>Financial Statement</td>
                                                         <td>/balance-sheet</td>
                                                         <td>Cash Flow (Indirect)</td>
                                                         <td>Md. Abdur Rashed</td>
-                                                        <td>9-Oct-2025</td>
+                                                        <td>24-Dec-2025</td>
                                                         <td>
                                                             <a href="Reports\MIS\CashFlowIndirect.pdf" 
                                                                target="_blank" 
@@ -162,222 +266,28 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- Example Row 5 -->
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 6 -->
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 7 -->
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 8 -->
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 9 -->
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 10 -->
+                                                    <!-- Income Statement -->
                                                     <tr>
                                                         <td>10</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td>MIS</td>
+                                                        <td>Income Statement</td>
+                                                        <td>/balance-sheet</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
+                                                        <td>Not Created</td>
                                                         <td>
-                                                            <a href="" 
+                                                            <a href="Reports\MIS\IncomeStatement.pdf" 
                                                                target="_blank" 
                                                                class="btn btn-xm">
                                                                 <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
-
-                                                    <!-- Example Row 11 -->
-                                                    <tr>
-                                                        <td>11</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 12 -->
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <!-- Example Row 13 -->
-                                                    <tr>
-                                                        <td>13</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <!-- Example Row 14 -->
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <!-- Example Row 15 -->
-                                                    <tr>
-                                                        <td>15</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Example Row 16 -->
-                                                    <tr>
-                                                        <td>16</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td>
-                                                            <a href="" 
-                                                               target="_blank" 
-                                                               class="btn btn-xm">
-                                                                <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- Add more rows as needed -->
                                                 </tbody>
                                             </table>
+                                            <div id="noResults" class="no-results" style="display: none;">
+                                                No reports found matching your search.
+                                            </div>
                                         </div>
 
                                         <div class="mt-3">
@@ -425,6 +335,9 @@
 
     <!-- bundle -->
     <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/report.js"></script>
+    
+    
 </body>
 
 </html>

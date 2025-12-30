@@ -1,0 +1,86 @@
+{
+  "Accounts": [
+    {
+      "page": "Voucher Points",
+      "url": "/voucher-list",
+      "name": "Voucher",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "9-Oct-2025",
+      "file": "Reports/Accounts/Account_Vouchar.pdf"
+    },
+    {
+      "page": "Receipt & Payment",
+      "url": "/receipt-Payement",
+      "name": "Receipt & Payment",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "21-Dec-2025",
+      "file": "Reports/Accounts/Receipt-Payement.pdf"
+    },
+    {
+      "page": "AccountsLedger/Accounts Voucher Details",
+      "url": "/accounts-voucher-details",
+      "name": "Bank Payment",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "21-Dec-2025",
+      "file": "Reports/Accounts/BankPayment.pdf"
+    },
+    {
+      "page": "Trial Balance",
+      "url": "/trial-balance",
+      "name": "TRIAL BALANCE",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "15-Dec-2025",
+      "file": "Reports/Accounts/trial-balance.pdf"
+    },
+    {
+      "page": "Cheque Register",
+      "url": "/cheque-register",
+      "name": "Not Created",
+      "createdBy": "Not Created",
+      "date": "Not Created",
+      "file": "#"
+    },
+    {
+      "page": "Cash Bank Position",
+      "url": "/bank-position",
+      "name": "Not Created",
+      "createdBy": "Not Created",
+      "date": "Not Created",
+      "file": "#"
+    }
+  ],
+  "MIS": [
+    {
+      "page": "Financial Statement",
+      "url": "/balance-sheet",
+      "name": "Balance Sheet",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "23-Dec-2025",
+      "file": "Reports/MIS/BalanceSheet.pdf"
+    },
+    {
+      "page": "Financial Statement",
+      "url": "/balance-sheet",
+      "name": "Cash Flow (Direct)",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "23-Dec-2025",
+      "file": "Reports/MIS/CashFlow.pdf"
+    },
+    {
+      "page": "Financial Statement",
+      "url": "/balance-sheet",
+      "name": "Cash Flow (Indirect)",
+      "createdBy": "Md. Abdur Rashed",
+      "date": "24-Dec-2025",
+      "file": "Reports/MIS/CashFlowIndirect.pdf"
+    },
+    {
+      "page": "Income Statement",
+      "url": "/balance-sheet",
+      "name": "Not Created",
+      "createdBy": "Not Created",
+      "date": "Not Created",
+      "file": "Reports/MIS/IncomeStatement.pdf"
+    }
+  ]
+}

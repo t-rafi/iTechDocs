@@ -58,4 +58,34 @@
                 searchInput.dispatchEvent(new Event('input'));
             });
         });
-    
+
+        
+const tableBody = document.getElementById('reportTableBody');
+
+fetch('report.json')
+  .then(response => response.json())
+  .then(data => {
+    let index = 1;
+    for (const moduleName in data) {
+      const reports = data[moduleName];
+      reports.forEach(report => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${index++}</td>
+          <td>${moduleName}</td>
+          <td>${report.page}</td>
+          <td>${report.url}</td>
+          <td>${report.name}</td>
+          <td>${report.createdBy}</td>
+          <td>${report.date}</td>
+          <td>
+            <a href="${report.file}" target="_blank" class="btn btn-xm">
+              <i class="mdi mdi-file-pdf text-danger" title="View Report"></i>
+            </a>
+          </td>
+        `;
+        tableBody.appendChild(tr);
+      });
+    }
+  })
+  .catch(error => console.error('Error loading reports:', error));

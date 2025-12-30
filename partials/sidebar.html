@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <style>
+/* Disable animations during initial load */
+.preload * {
+    transition: none !important;
+}
+
+/* Sidebar smooth transitions (AFTER load) */
+.left-sidebar .list-group-item {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease,
+        border-left 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.left-sidebar .list-group-item:hover {
+    background-color: rgba(114, 124, 245, 0.08);
+    padding-left: 1.75rem;
+}
+
+.left-sidebar .list-group-item.active {
+    background-color: rgba(114, 124, 245, 0.15);
+    color: #727cf5;
+    font-weight: 600;
+    border-left: 3px solid #727cf5;
+    padding-left: 1.75rem;
+}
+
+
+    </style>
+</head>
+    <body class="preload">
+            <div class="left-sidebar">
+                <div class="slimscroll-menu">
+                    <div class="list-group list-group-transparent mb-0">
+
+                        <span class="list-group-item disabled">
+                            Getting Started
+                        </span>
+
+                        <a href="index.html" class="list-group-item list-group-item-action" data-page="index">
+                            <span class="mr-2">
+                                <i class="mdi mdi-flag-variant-outline"></i>
+                            </span>Introduction
+                        </a>
+
+                        
+                        <span class="list-group-item disabled">
+                            Menu
+                        </span>
+
+                        
+                        <a href="report.html" class="list-group-item list-group-item-action" data-page="report">
+                            <span class="mr-2">
+                                <i class="mdi mdi-file-chart"></i>
+                            </span>Reports
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+
+

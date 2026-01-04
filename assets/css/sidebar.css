@@ -1,0 +1,47 @@
+/* Disable animations during initial load */
+.preload * {
+    transition: none !important;
+}
+
+/* Sidebar smooth transitions (AFTER load) */
+.left-sidebar .list-group-item {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease,
+        border-left 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.left-sidebar .list-group-item:hover {
+    background-color: rgba(114, 124, 245, 0.08);
+    padding-left: 1.75rem;
+}
+
+.left-sidebar .list-group-item.active {
+    background-color: rgba(114, 124, 245, 0.15);
+    color: #727cf5;
+    font-weight: 600;
+    border-left: 3px solid #727cf5;
+    padding-left: 1.75rem;
+}
+.sidebar-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-icon {
+    font-weight: bold;
+    width: 16px;
+    display: inline-block;
+}
+
+.sidebar-children .list-group-item {
+    border-left: none;
+    padding-left: 1.75rem;
+}
+.sidebar-toggle:hover {
+    padding-left: initial;
+}

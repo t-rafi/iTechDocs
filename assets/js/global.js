@@ -1,5 +1,7 @@
+const basePath = window.location.pathname.includes('/modules/') ? '../' : '';
+
 // global.js
-fetch('partials/header.html')
+fetch(basePath + 'partials/header.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('_header').innerHTML = data;
@@ -25,9 +27,9 @@ fetch('partials/footer.html')
 document.addEventListener('DOMContentLoaded', () => {
 
     Promise.all([
-        fetch('partials/header.html').then(r => r.text()),
-        fetch('partials/sidebar.html').then(r => r.text()),
-        fetch('partials/footer.html').then(r => r.text())
+        fetch(basePath + '../partials/header.html').then(r => r.text()),
+        fetch(basePath + '../partials/sidebar.html').then(r => r.text()),
+        fetch(basePath + '../partials/footer.html').then(r => r.text())
     ]).then(([header, sidebar, footer]) => {
 
         document.getElementById('_header').innerHTML = header;
@@ -42,3 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// for expand documentation
+document.addEventListener('click', function (e) {
+
+    const toggle = e.target.closest('.sidebar-toggle');
+    if (!toggle) return;
+
+    const targetId = toggle.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+    const icon = toggle.querySelector('.toggle-icon');
+
+    if (!target) return;
+
+    if (target.classList.contains('d-none')) {
+        target.classList.remove('d-none');
+        icon.textContent = '−';
+    } else {
+        target.classList.add('d-none');
+        icon.textContent = '+';
+    }
+});
+// report.js
+

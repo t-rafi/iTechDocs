@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <style>
-/* Disable animations during initial load */
-.preload * {
-    transition: none !important;
-}
-
-/* Sidebar smooth transitions (AFTER load) */
-.left-sidebar .list-group-item {
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        padding-left 0.2s ease,
-        border-left 0.2s ease;
-    border-left: 3px solid transparent;
-}
-
-.left-sidebar .list-group-item:hover {
-    background-color: rgba(114, 124, 245, 0.08);
-    padding-left: 1.75rem;
-}
-
-.left-sidebar .list-group-item.active {
-    background-color: rgba(114, 124, 245, 0.15);
-    color: #727cf5;
-    font-weight: 600;
-    border-left: 3px solid #727cf5;
-    padding-left: 1.75rem;
-}
-
-
-    </style>
+<link rel="stylesheet" href="assets/css/sidebar.css" />
 </head>
     <body class="preload">
             <div class="left-sidebar">
@@ -41,7 +11,7 @@
                             Getting Started
                         </span>
 
-                        <a href="index.html" class="list-group-item list-group-item-action" data-page="index">
+                        <a href="../report.html" class="list-group-item list-group-item-action" data-page="index">
                             <span class="mr-2">
                                 <i class="mdi mdi-flag-variant-outline"></i>
                             </span>Introduction
@@ -53,14 +23,51 @@
                         </span>
 
                         
-                        <a href="report.html" class="list-group-item list-group-item-action" data-page="report">
+                        <a href="../report.html" class="list-group-item list-group-item-action" data-page="report">
                             <span class="mr-2">
                                 <i class="mdi mdi-file-chart"></i>
                             </span>Reports
                         </a>
+
+                        <!-- <a href="documentation.html" class="list-group-item list-group-item-action" data-page="documentation">
+                            <span class="mr-2">
+                                <i class="mdi mdi-file-chart"></i>
+                            </span>Documentation
+                        </a> -->
+
+                        <!-- Documentation -->
+<div class="list-group-item list-group-item-action sidebar-toggle"
+     data-target="docMenu">
+    <span class="toggle-icon">+</span>
+    Documentation
+</div>
+
+<!-- Documentation Children -->
+<div class="sidebar-children d-none" id="docMenu">
+
+    <!-- Modules -->
+    <div class="list-group-item list-group-item-action sidebar-toggle ms-3"
+         data-target="moduleMenu">
+        <span class="toggle-icon">+</span>
+        Modules
+    </div>
+
+    <!-- Module Pages -->
+    <div class="sidebar-children d-none ms-5" id="moduleMenu">
+        <a href="../Documentation/Module1.html" class="list-group-item list-group-item-action">Module 1</a>
+        <a href="../Documentation/Module2.html" class="list-group-item list-group-item-action">Module 2</a>
+        <a href="Documentation/Module3.html" class="list-group-item list-group-item-action">Module 3</a>
+        <a href="Documentation/Module4.html" class="list-group-item list-group-item-action">Module 4</a>
+        <a href="Documentation/Module5.html" class="list-group-item list-group-item-action">Module 5</a>
+    </div>
+
+</div>
+
                     </div>
                 </div>
             </div>
+
+            <script src="assets/js/global.js"></script>
     </body>
 </html>
 

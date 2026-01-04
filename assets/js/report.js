@@ -62,7 +62,7 @@
         
 const tableBody = document.getElementById('reportTableBody');
 
-fetch('report.json')
+fetch('Report-Json/report.json')
   .then(response => response.json())
   .then(data => {
     let index = 1;

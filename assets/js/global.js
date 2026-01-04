@@ -23,27 +23,42 @@ fetch('partials/footer.html')
   .catch(err => console.error('Error loading footer:', err));
 
 // Remove preload class after content is loaded
+async function fetchWithFallback(primary, fallback) {
+  try {
+    const res = await fetch(primary);
+    if (!res.ok) throw new Error('Primary failed');
+    return await res.text();
+  } catch {
+    const res = await fetch(fallback);
+    if (!res.ok) throw new Error('Fallback failed');
+    return await res.text();
+  }
+}
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const [header, sidebar, footer] = await Promise.all([
+      fetchWithFallback('../partials/header.html', 'partials/header.html'),
+      fetchWithFallback('../partials/sidebar.html', 'partials/sidebar.html'),
+      fetchWithFallback('../partials/footer.html', 'partials/footer.html')
+    ]);
 
-    Promise.all([
-        fetch(basePath + '../partials/header.html').then(r => r.text()),
-        fetch(basePath + '../partials/sidebar.html').then(r => r.text()),
-        fetch(basePath + '../partials/footer.html').then(r => r.text())
-    ]).then(([header, sidebar, footer]) => {
+    document.getElementById('_header').innerHTML = header;
+    document.getElementById('_sidebar').innerHTML = sidebar;
+    document.getElementById('_footer').innerHTML = footer;
 
-        document.getElementById('_header').innerHTML = header;
-        document.getElementById('_sidebar').innerHTML = sidebar;
-        document.getElementById('_footer').innerHTML = footer;
+    if (typeof setActiveMenu === 'function') {
+      setActiveMenu();
+    }
 
-        setActiveMenu();
-
-        // Enable animations AFTER render
-        requestAnimationFrame(() => {
-            document.body.classList.remove('preload');
-        });
+    requestAnimationFrame(() => {
+      document.body.classList.remove('preload');
     });
+  } catch (err) {
+    console.error('Partial load failed:', err);
+  }
 });
+
 
 // for expand documentation
 document.addEventListener('click', function (e) {
